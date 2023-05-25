@@ -1,0 +1,1385 @@
+/*
+======== Table of Contents ======== 
+
+1.1 global styles
+1.2 typography
+1.3 layout
+1.4 components
+
+2+. Media Queries
+   .1 global styles
+   .2 typography
+   .3 layout
+   .4 component
+
+===================================
+*/
+
+
+/* ========
+   1.1 global styles
+   ======== */
+
+:root {
+   --clr-bright-light: #ffffff;
+   --clr-light: #fafafa;
+   --clr-off-light: #eeeeee;
+   --clr-dark: #111111;
+   --clr-dark-gray: #1d1d1d; 
+   --clr-gray: #555555;
+   --clr-light-gray: #8e8e8e;
+   --clr-lighter-gray: #dddddd;
+   --clr-accent: #42abe7;
+
+   --clr-twitter: #1da1f2;
+   --clr-fb: #1877f2;
+   --clr-insta: #e4405f;
+
+}
+
+* {
+   box-sizing: border-box;
+}
+   
+html {
+   margin: 0;
+   padding: 0;
+   scroll-behavior: smooth;
+}
+   
+.desktop {
+   display: none;
+}
+
+body {
+   margin: 0;
+   min-width: 20.375rem
+}
+
+
+.inverted {
+   background-color: transparent;
+}
+
+.hidden-fade {
+   opacity: 0;
+   transition: 1000ms;
+}
+
+.hidden-slide {
+   opacity: 0;
+   transition: 750ms;
+}
+
+.show-fade {
+   opacity: 1;
+}
+
+.show-slide-right {
+   opacity: 1;
+   animation-name: loadslideright;
+   animation-duration: 1000ms;
+}
+
+@keyframes loadslideright {
+   from {opacity: 0; transform: translateX(-100%)}
+   to {opacity: 1; transform: translateX(0%)}
+}
+
+.show-slide-left {
+   opacity: 1;
+   animation-name: loadslideleft;
+   animation-duration: 1000ms;
+}
+
+@keyframes loadslideleft {
+   from {opacity: 0; transform: translateX(100%)}
+   to {opacity: 1; transform: translateX(0%)}
+}
+
+.show-slide-up {
+   opacity: 1;
+   animation-name: loadslideup;
+   animation-duration: 1000ms;
+}
+
+/* ========
+   1.2 typography
+   ======== */
+
+body {
+   font-family: 'Inter', sans-serif;
+   color: var(--clr-dark);
+}
+
+header {
+   font-family: 'Inria Sans', sans-serif;
+}
+
+.brand a,
+.brand a:active,
+.brand a:visited {
+   display: flex;
+   letter-spacing: 0;
+   color: var(--clr-light-gray);
+}
+
+nav a,
+nav a:active,
+nav a:visited,
+.modal a,
+.modal a:active,
+.modal a:visited,
+.learning a,
+.learning a:active,
+.learning a:visited,
+.news a,
+.news a:active,
+.news a:visited,
+.thesis a,
+.thesis a:active,
+.thesis a:visited
+footer a,
+footer a:active,
+footer a:visited  {
+   color: var(--clr-dark);
+}
+
+a,
+a:active,
+a:visited  {
+   text-decoration: none;
+   letter-spacing: 0.035rem;
+}
+
+.learning-card a,
+.learning-card a:active,
+.learning-card a:visited {
+   letter-spacing: 0rem;
+}
+
+.learning-card a::before {
+   content: "";
+   position: absolute;
+   top: 0px;
+   right: 0px;
+   bottom: 0px;
+   left: 0px;
+}
+
+.info a,
+.info a:active,
+.info a:visited,
+.article a,
+.article a:active,
+.article a:visited,
+.thesis-content a,
+.thesis-content a:active,
+.thesis-content a:visited  {
+   color: var(--clr-accent);
+   transition: 250ms;
+}
+
+.info a:hover,
+.article a:hover,
+.thesis-content a:hover {
+   font-size: 1.05rem;
+}
+
+.cta-content h1,
+.cta-content p,
+.info-item h3,
+.info-item p  {
+   text-align: center;
+   margin: 1rem auto;
+}
+
+.cta-content p,
+.cta-btn {
+   font-size: 1.25rem;
+   letter-spacing: 0.035rem;
+}
+
+.cta-btn {
+   font-weight: 700;
+}
+
+.call-to-action a {
+   color: var(--clr-off-light);
+}
+
+.info p {
+   margin: 1.5rem auto;
+   margin-top: 0.75rem;
+}
+
+.info p,
+.learning p,
+.learning span,
+.news p,
+.thesis p,
+footer span {
+   letter-spacing: 0.035rem;
+   line-height: 1.75rem;
+}
+
+footer p,
+footer li {
+   letter-spacing: 0.035rem;
+   line-height: 2.25rem;
+}
+
+footer li {
+   position: relative;
+}
+
+h1,
+h2 {
+   font-size: 1.75rem;
+}
+
+.info h3,
+.learning h3 {
+   font-size: 1.5rem;
+}
+
+.learning h3 {
+   margin: 1rem 0;
+}
+
+.learning p,
+.learning span {
+   color: var(--clr-gray);
+}
+
+.quote p {
+   padding-top: 0.5rem;
+}
+
+.featured h3 {
+   font-size: 1.5rem;
+}
+
+.additional h3 {
+   font-size: 1.25rem;
+}
+
+.thesis h2 {
+   width: 100%;
+   text-align: center;
+}
+
+footer p {
+   font-weight: 700;
+   padding: 0.25rem 0;
+   margin: 0;
+}
+
+footer span {
+   padding: 1rem 0;
+   text-align: center;
+   margin: auto;
+}
+
+/* ========
+   1.3 layout
+   ======== */
+
+header {
+   position: fixed;
+   display: grid;
+   width: 100%;
+   height: 3.5rem;
+   padding: 0;
+   background-color: var(--clr-light);
+   top: 0rem;
+   z-index: 5;
+   transition: background-color 0.3s ease;
+}
+
+.header-container {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   padding: 0 1.5rem;
+}
+
+nav {
+   display: flex;
+}
+
+.brand {
+   display: flex;
+   justify-content: center;
+}
+
+.modal {
+   position: fixed;
+   display: none;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   border: 1px solid var(--clr-light);
+   z-index: 50;
+   background-color: var(--clr-light);
+   color: var(--clr-dark-gray);
+   width: 100%;
+   height: 100%;
+   animation-name: modalopen;
+   animation-duration: 250ms;
+}
+
+@keyframes modalopen {
+   from {opacity: 0}
+   to {opacity: 1}
+}
+
+.modal-header {
+   padding: 1.5rem 2rem;
+   display: grid;
+   justify-content: end;
+}
+
+.modal-main {
+   display: grid;
+   justify-content: center;
+}
+
+.hero {
+   height: 55vw;
+   background: url("/assets/img-hero.jpg");
+   background-size: cover;
+   background-position: center;
+}
+
+.call-to-action {
+   background-color: var(--clr-off-light);
+}
+
+.cta-container {
+   display: flex;
+   justify-content: center;
+   width: 100%;
+   padding: 2rem 1rem;
+   padding-bottom: 3rem;
+}
+
+.cta-content {
+   display: grid;
+   justify-items: center;
+}
+
+.info-container {
+   padding-bottom: 1rem;
+   max-width: 30rem;
+   margin: auto;
+}
+
+.quote {
+   padding: 1rem;
+}
+
+.info-item {
+   padding: 1rem;
+}
+
+.info-content {
+   display: grid;
+   justify-items: center;
+}
+
+.learning {
+   background-color: var(--clr-off-light);
+}
+
+.learning-container {
+   display: grid;
+   justify-items: center;
+   padding: 2rem 0;
+   padding-bottom: 3rem;
+}
+
+.learning-grid {
+   display: grid;
+   padding: 1rem;
+}
+
+.learning-card {
+   position: relative;
+   aspect-ratio: 1 / 1;
+   max-width: 28.125rem;
+   background-color: var(--clr-light);
+   margin: 1rem 0;
+   transition: 300ms;
+}
+
+.learning-card:hover {
+   transform: translateY(-0.5rem);
+   box-shadow: 0px 3px 5px var(--clr-lighter-gray);
+}
+
+.card-content {
+   padding: 1rem;
+   padding-top: 0rem;
+}
+
+.news-container {
+   display: grid;
+   justify-items: center;
+   padding: 2rem 1rem;
+   max-width: 30rem;
+   margin: auto;
+}
+
+.news-list {
+   padding: 1rem 0
+}
+
+.article {
+   padding-bottom: 2rem;
+}
+
+.thesis {
+   background-color: var(--clr-off-light);
+}
+
+.thesis-container {
+   display: flex;
+   flex-wrap: wrap;
+   padding: 2rem 1rem;
+   max-width: 30rem;
+   margin: auto;
+}
+
+.thesis-main,
+.thesis-card {
+   padding: 1.5rem 0;
+}
+
+footer {
+   position: absolute;
+   background-color: var(--clr-off-light);
+   width: 100%;
+}
+
+.footer-container {
+   border-top: 1px solid var(--clr-light-gray);
+   padding: 1rem;
+}
+
+footer .page-links {
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: center;
+}
+
+.helpful-links,
+.visitor-links,
+.social-links {
+   padding: 1rem;
+}
+
+.ownership {
+   display: flex;
+   flex-wrap: wrap-reverse;
+   padding: 0 1rem;
+}
+
+.legal {
+   display: flex;
+   width: 100%;
+   justify-content: space-around;
+   padding: 1rem;
+}
+  
+
+/* ========
+   1.4 components
+   ======== */
+
+header .btn {
+   margin: 0 1.5rem;
+}
+
+.open-btn:hover,
+.close-btn:hover {
+    color: var(--clr-light-gray);
+}
+
+.close-btn {
+   border: none;
+   background: none;
+   font-size: 2rem;
+   font-weight: 700;
+   line-height: 1.5rem;
+   color: var(--clr-dark);
+   transition-duration: 250ms;
+   cursor: pointer;
+   margin: 0.5rem;
+}
+ 
+.modal-main ul {
+   display: grid;
+   justify-content: center;
+   list-style: none;
+   padding: 2rem 0;
+
+}
+
+.modal-main li {
+   margin: 2rem auto;
+   cursor: pointer;
+}
+
+.modal-footer ul {
+   display: flex;
+   justify-content: center;
+}
+
+.modal-footer li {
+   margin: 2rem;
+}
+ 
+.call-to-action .btn {
+   margin: 1.75rem auto;
+}
+
+.open-btn {
+   border: none;
+   background: none;
+   padding: 0;
+   font-size: 1rem;
+   transition-duration: 250ms;
+   cursor: pointer;
+}
+
+.login-btn {
+   border: 1px solid var(--clr-dark);
+   padding: 0.5rem 1.5rem;
+   transition-duration: 250ms;
+}
+
+.login-btn:hover {
+   color: var(--clr-light);
+   background-color: var(--clr-dark);
+}
+
+.login-icon {
+   display: grid;
+}
+
+.login-icon,
+.login-icon img {
+   width: 1.25rem;
+   height: 1.25rem;   
+   transition-duration: 750ms;
+}
+
+.login-icon img:hover {
+   border: 1px solid var(--clr-dark);
+   border-radius: 3rem;
+}
+
+nav li,
+.modal li {
+   position: relative;
+}
+
+
+.modal-main a::after,
+nav li::after,
+.ownership li::after {
+   content: '';
+   height: 3px;
+   width: 100%;
+   opacity: 0;
+   background: var(--clr-dark);
+   position: absolute;
+   left: 0;
+   bottom: -0.5rem;
+   transition: 500ms;
+}
+
+.ownership li::after {
+   bottom: -0.125rem;
+}
+
+.modal a:hover::after,
+nav li:hover::after,
+.ownership li:hover::after  {
+   opacity: 100%;
+}
+
+.helpful-links a::before,
+.visitor-links a::before {
+   content: '';
+   height: 1rem;
+   width: 0.2rem;
+   opacity: 0;
+   background: var(--clr-dark);
+   position: absolute;
+   left: -5%;
+   top: 25%;
+   transition: 500ms;
+}
+
+.helpful-links a:hover::before,
+.visitor-links a:hover::before {
+   opacity: 100%;
+}
+
+.cta-btn {
+   border: 4px solid var(--clr-gray);
+   background-color: var(--clr-gray);
+   padding: 0.75rem 5.5rem;
+   transition: 250ms;
+}
+
+.cta-btn:hover {
+   background-color: transparent;
+   color: var(--clr-gray);
+}
+
+ul {
+   list-style: none;
+   padding: 0;
+   margin: 0;
+}
+
+.quote img {
+   width: 100%;
+}
+
+.info-item img {
+   width: 100%;
+}
+
+.learning-card img {
+   aspect-ratio: 2 / 1;
+   width: 100%;
+}
+
+.news-container img {
+   width: 100%;
+   filter: brightness(95%);
+}
+
+.thesis-main img, 
+.thesis-additionals img {
+   aspect-ratio: 2 / 1;
+   width: 100%;
+   object-fit: cover;
+}
+
+footer .social-links ul {
+   display: grid;
+   justify-items: center;
+}
+
+footer .social-links li {
+   margin: 0.5rem auto;
+}
+
+.social-links img {
+   aspect-ratio: 1 / 1;
+   width: 1.5rem;
+   object-fit: contain;
+   transition: 250ms;
+}
+
+.social-links img:hover {
+   opacity: 50%;
+}
+
+
+/* ========
+   2+. media queries
+   ========*/
+
+@media (min-width: 48rem) {
+
+   /* ========
+   2.1 global styles
+      ========*/
+
+   .desktop {
+      display: flex;
+   }
+
+   .mobile {
+      display: none;
+   }
+
+   /* ========
+   2.2 typography
+      ========*/
+
+   h1,
+   h2 {
+      font-size: 2rem;
+   }
+
+   .brand {
+      text-transform: uppercase;
+   }
+
+   .brand span {
+      font-weight: 700;
+      color: var(--clr-dark);
+   }
+
+   .cta-content h1,
+   .cta-content p {
+      text-align: left;
+   }
+
+   .info-item h3,
+   .info-item p  {
+      text-align: left;
+      margin: 0;
+   }
+
+   .featured h3 {
+      font-size: 1.75rem;
+   }
+
+   .thesis h3 {
+      font-size: 1.25rem
+   }
+
+   /* ========
+   2.3 layout
+      ========*/
+
+   .header-container {
+      width: 100%;
+   }
+
+   nav {
+      align-items: center;
+   }
+
+   .hero {
+      height: 45vh;
+   }
+
+   .cta-container {
+      padding: 2rem;
+   }
+
+   .cta-content {
+      justify-items: left;
+      padding: 1rem 1.75rem;
+      max-width: 25rem;
+      margin: auto;
+   }
+
+   .info-container {
+      max-width: 45rem;
+      padding: 1rem;
+   }
+
+   .info-item {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      padding: 1rem;
+   }
+   
+   .info-content {
+      display: grid;
+      justify-items: left;
+      align-items: center;
+      padding: 1.5rem;
+   }
+
+   .news-container {
+      max-width: 45rem;
+   }
+      
+   .thesis-container {
+      max-width: 45rem;
+      padding-bottom: 4rem;
+   }
+
+   .thesis-additionals {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+   }
+   
+   .thesis-main {
+      padding: 1.5rem 0;
+   }
+
+   .thesis-card {
+      padding: 1.5rem;
+   }
+
+   /* ========
+   2.3 components
+      ========*/
+
+   header .btn {
+      margin: 0 0.75rem;
+   }
+
+   nav li {
+      margin: 0 0.75rem;
+   }
+
+
+   .call-to-action img {
+      width: 50%;
+   }
+
+   .call-to-action .btn {
+      margin: 1.75rem 0;
+   }
+
+   .info-item img {
+      aspect-ratio: 1 / 1;
+      width: 100%;
+      max-width: 15.625rem;
+      object-fit: cover;
+   }
+
+   .thesis-main img, 
+   .thesis-additionals img {
+      aspect-ratio: 1.5 / 1;
+   }
+
+}
+
+@media (min-width: 58rem) {
+
+   /* ========
+   3.1 global styles
+      ========*/
+
+
+   /* ========
+   3.2 typography
+      ========*/
+
+   h1,
+   h2 {
+      font-size: 2.25rem;
+   }
+
+   footer span {
+      margin: 0;
+   }
+
+
+   /* ========
+   3.3 layout
+      ========*/
+
+   .cta-container {
+      display: flex;
+      justify-content: left;
+   }
+
+   .cta-content {
+      padding: 1rem 0.75rem;
+      margin: auto 2.25rem;
+   }
+
+   .learning-grid {
+      grid-template-columns: 1fr 1fr;
+   }
+
+   .learning-card {
+      margin: 1rem;
+   }
+
+   footer .page-links {
+      justify-content: space-between;
+      max-width: 45.75rem;
+      margin: auto;
+   }
+   
+   .helpful-links,
+   .visitor-links,
+   .social-links {
+      padding: 1rem auto;
+   }
+
+   .ownership {
+      justify-content: space-between;
+   }
+   
+   .legal {
+      width: 9.5rem;
+      justify-content: space-between;
+      padding: 1rem 0;
+   }
+
+      
+   /* ========
+   3.3 components
+      ========*/
+
+   .call-to-action .btn {
+      margin: 2.25rem 0;
+   }
+      
+   .cta-btn {
+      padding: 1rem 6.75rem;
+   }
+
+}
+
+@media (min-width: 64rem) {
+
+   /* ========
+   4.1 global styles
+      ========*/
+
+      @keyframes loadslideup {
+         from {opacity: 0; transform: translateY(100%)}
+         to {opacity: 1; transform: translateY(0%)}
+      }
+
+   /* ========
+   4.2 typography
+      ========*/
+
+   /* ========
+   4.3 layout
+      ========*/
+
+   .hero {
+      height: 92vh;
+   }
+
+   .cta-content {
+      padding: 1rem 1.5rem;
+      margin: auto 2.5rem;
+   }
+
+   /* ========
+   4.3 components
+      ========*/
+
+   nav li {
+      margin: 0 1.5rem;
+   }
+
+   .call-to-action img {
+      aspect-ratio: 1.6 / 1 ;
+      width: 49%;
+      object-fit: cover;
+   }
+
+
+}
+
+@media (min-width: 75rem) {
+
+   /* ========
+   5.1 global styles
+      ========*/
+
+
+   /* ========
+   5.2 typography
+      ========*/
+
+   .brand {
+      font-size: 1.5rem;
+   }
+
+   /* ========
+   5.3 layout
+      ========*/
+
+   header {
+      height: 4.875rem;
+   }
+
+   .header-container,
+   .footer-container  {
+      padding: 0 2.5rem;
+   }
+
+   .cta-container {
+      padding: 3rem;
+   }
+
+   .info-container {
+      display: grid;
+      max-width: none;
+      grid-template-columns: 1fr 1fr;
+      padding: 2rem;
+   }
+
+   #info-3 {
+      padding: 0 1.5rem;
+   }
+
+   .thesis-container {
+      width: 72rem;
+      max-width: none;
+      padding: 2rem 0;
+      padding-bottom: 4rem;
+   }
+
+   .thesis-additionals {
+      display: grid;
+      grid-template-columns: 1fr;
+      width: 50%;
+      align-content: start;
+      padding-top: 0.5rem
+   }
+
+   .thesis-main{
+      width: 50%;
+      padding: 1.75rem 1rem;
+   }
+
+   .thesis-card {
+      display: flex;
+      width: 100%;
+      height: 13rem;
+      padding: 1.25rem 1rem;
+   }
+
+   .thesis-additionals .thesis-content {
+      padding: 0 1rem;
+      width: 80%;
+   }
+
+
+   /* ========
+   5.3 components
+      ========*/
+
+   .brand img {
+      height: 3rem;
+      align-self: center;
+   }
+
+   .thesis-additionals img {
+      aspect-ratio: 1 / 1;
+      width: 35%;
+   }
+
+}
+
+@media (min-width: 90rem) {
+
+   /* ========
+   6.1 global styles
+      ========*/
+
+
+   /* ========
+   6.2 typography
+      ========*/
+
+   h1,
+   h2,
+   .featured h3 {
+      font-size: 2.75rem;
+   }
+
+   .featured h3 {
+      margin: 1.5rem 0;
+   }
+
+   .cta-content p,
+   .cta-btn {
+      font-size: 1.5rem;
+   }
+
+   .additional h3,
+   .thesis h3 {
+      font-size: 1.5rem;
+   }
+
+   .thesis-card .thesis-content h3 {
+      margin: .25rem 0;
+   }
+
+   .thesis-content a {
+      width: fit-content;
+   }
+
+   /* ========
+   6.3 layout
+      ========*/
+
+   .cta-content {
+      max-width: 28rem;
+      padding: 1rem;
+      margin: auto 4rem;
+   }
+
+   .info-content{
+      padding: 2.5rem 1.5rem;
+   }
+
+   #info-3  {
+      padding: 1.5rem;
+   }
+
+   .news-container {
+      width: 98%;
+      max-width: none;
+      padding: 2rem 0;
+   }
+
+   .news-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      padding: 0;
+      padding-top: 2rem;
+   }
+
+   .featured,
+   .additional {
+      padding: 0 2rem;
+   }
+
+   .featured {
+      padding-top: 2rem;
+   }
+
+   .thesis-container {
+      width: 86rem;
+      padding-bottom: 6rem;
+   }
+
+   .thesis-additionals {
+      width: 45%;
+   }
+
+   .thesis-main{
+      width: 55%;
+   }
+
+   .thesis-additionals .thesis-content {
+      width: 80%;
+   }
+
+   .thesis-card .thesis-content {
+      display: grid;
+      align-content: center;
+   }
+
+   /* ========
+   6.3 components
+      ========*/
+
+   .call-to-action .btn {
+      margin: 2.75rem 0;
+   }
+
+   .cta-btn {
+      padding: 1.25rem 8.25rem;
+   }
+
+
+}
+
+@media (min-width: 100rem) {
+
+   /* ========
+   7.1 global styles
+      ========*/
+
+
+   /* ========
+   7.2 typography
+      ========*/
+
+   /* ========
+   7.3 layout
+      ========*/
+
+   .quote-content {
+      width: 90%;
+   }
+
+   .info-container {
+      grid-template-columns: 1.25fr 1fr;
+   }
+
+   .info-content{
+      padding: 3rem 1.5rem;
+   }
+
+   #info-3  {
+      padding: 2rem 1.5rem;
+   }
+
+   .learning-grid {
+      grid-template-columns: 1fr 1fr 1fr;
+   }
+
+   .learning-card {
+      margin: 1.5rem;
+   }
+
+   .thesis-main .thesis-content {
+      max-width: 46.25rem;
+   }
+
+   .thesis-container {
+      width: 96%
+   }
+
+   .featured .article {
+      width: 85%;
+      max-width: 46rem;
+   }
+
+   .thesis-card {
+      height: auto;
+   }
+
+   .thesis-additionals .thesis-content {
+      padding: 1.75rem;
+   }
+
+   /* ========
+   7.3 components
+      ========*/
+
+   .call-to-action img {
+      width: 55%;
+   }
+
+}
+
+@media (min-width: 116.5rem) {
+
+   /* ========
+   8.1 global styles
+      ========*/
+
+
+   /* ========
+   8.2 typography
+      ========*/
+
+   /* ========
+   8.3 layout
+      ========*/
+
+   .header-container,
+   .cta-container,
+   .info-container,
+   .learning-container,
+   .news-container,
+   .thesis-container,
+   .footer-container {
+      max-width: 123.75rem;
+      margin: auto;
+   }
+
+   .header-container,
+   .footer-container {
+      padding: 0 3.5rem;
+   }
+
+   .cta-container {
+      padding: 4rem;
+   }
+
+   .cta-content {
+      margin: auto 6rem;
+   }
+
+   .quote {
+      padding-top: 1.25rem;
+   }
+
+   .quote-content {
+      width: 80%;
+   }
+
+   .info-container {
+      grid-template-columns: 1.25fr 1fr;
+      padding: 2rem 3rem;
+   }
+
+   .info-item {
+      padding: 1.25rem;
+      padding-bottom: 1rem;
+   }
+
+   .info-content {
+      max-width: 95%;
+      padding: 4rem 1.5rem;
+   }
+
+   #info-3  {
+      padding: 3rem 1.5rem;
+   }
+
+   .news-container {
+      width: 100%;
+      padding: 2rem;
+   }
+
+   .additional .article {
+      padding: 2rem 1rem;
+      padding-top: 0;
+   }
+
+   .thesis-container {
+      width: 100%;
+      padding: 2rem 3rem;
+      padding-bottom: 6rem;
+   }
+
+   .thesis-additionals {
+      padding: 0;
+   }
+
+   .thesis-main .thesis-content {
+      max-width: 46.25rem;
+   }
+
+   .thesis-card {
+      padding: 1.75rem 1.5rem;
+   }
+
+   .thesis-additionals img {
+      max-width: 17rem;
+   }
+
+   /* ========
+   8.3 components
+      ========*/
+
+}
+
+@media (min-width: 125rem) {
+
+   /* ========
+   9.1 global styles
+      ========*/
+
+   /* ========
+   9.2 typography
+      ========*/
+
+   /* ========
+   9.3 layout
+      ========*/
+
+      .quote {
+         padding-top: 1.75rem;
+      }
+   
+      .info-item {
+         padding: 1.75rem;
+      }
+
+   /* ========
+   9.3 layout
+      ========*/
+
+}

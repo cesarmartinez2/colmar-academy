@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel = "icon" href = "assets/ic-logo.svg" 
+    type = "image/x-icon">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inria+Sans:wght@400;700&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <title>Home | Colmar Academy</title>
+
+    <link href="/style.css" rel="stylesheet"/>
+    <script defer src="script.js"></script>
+
+</head>
+<body>
+
+    <header id="header" class="inverted">
+        <div class="header-container">
+            <div class="brand"><a href="#">
+                <img src="assets/ic-logo.svg" alt="logo"/>
+                <p class="desktop"><span>Colmar</span>Academy</p>
+            </div></a>
+            <nav>
+                <ul class="desktop">
+                    <li class="nav-item"><a href="#">About Us</a></li>
+                    <li class="nav-item"><a href="#">On Campus</a></li>
+                    <li class="nav-item"><a href="#">Online</a></li>
+                    <li class="nav-item"><a href="#">For Companies</a></li>
+                </ul>
+                <div class="btn">
+                    <a class="login-icon mobile" href="#"><img src="/assets/icon-login.png" alt=""/></a>
+                    <a class="login-btn desktop" href="#">Sign In</a>
+                </div>
+                <button id='open-btn' class="open-btn .btn mobile">
+                    <i class="fa fa-bars fa-lg"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <div id="modal" class="modal">
+            <div class="modal-header">
+            <button id='close-btn' class="close-btn">&times;</button>
+            </div>
+            <div class="modal-main">
+                <ul class="modal-nav">
+                    <li id="modal-home" class="menu-item"><a href="#">Home</a></li>
+                    <li id="modal-about" class="menu-item"><a href="#">About Us</a></li>
+                    <li id="modal-campus" class="menu-item"><a href="#">On Campus</a></li>
+                    <li id="modal-online" class="menu-item"><a href="#">Online</a></li>
+                    <li id="modal-companies" class="menu-item"><a href="#">For Companies</a></li>
+                </ul>
+            </div>
+            <div class="modal-footer social-links">
+                <ul>
+                    <li><a href="#"><img class="twitter" src="/assets/logo-twitter.png" alt="twitter logo"/></a></li>
+                    <li><a href="#"><img class="facebook" src="/assets/logo-fb.png" alt="facebook logo"/></a></li>
+                    <li><a href="#"><img class="instagram" src="/assets/logo-insta.png" alt="instagram logo"/></a></li>
+                </ul>
+            </div>
+    </div>
+
+    <main id="main">
+        <section id="home" class="hero"></section>
+        <section class="call-to-action">
+            <div class="cta-container">
+                <img class="desktop hidden-slide-up" src="/assets/img-banner.jpg" alt=""/>
+                <div class="cta-content">
+                    <h1>Learners Today, Leaders Tomorrow</h1>
+                    <p>Don't settle. Build the best foundation for your future.</p>
+                    <div class="btn">
+                        <a class="cta-btn" href="#">Start Here</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="info">
+            <div class="info-container">
+                <div class="quote">
+                    <img src="/assets/info-main.jpg" alt=""/>
+                    <div class="quote-content">
+                        <h2 class="hidden-fade">Dream Big, <span>Dare to Fail</span></h2>
+                        <p>“There is only one thing that makes a dream impossible to achieve: the fear of failure. Don’t fear failure so much that you refuse to try. You gain strength, courage, and confidence with every experience in which you stop to look fear in the face, so dare. Dare to fail. Dare to become a better version of yourself. Your dreams will be waiting for you on the other side.“</p>
+                        <p>Dr. Emanuel Dupont, Professor at the College of Engineering</p>
+                    </div>
+                </div>
+                <div class="informationals">
+                    <ul>
+                        <li class="info-item">
+                            <img class="desktop" src="/assets/info-orientation.jpg" alt=""/>
+                            <img class="mobile" src="/assets/info-orientation-mobile.jpg" alt=""/>
+                            <div  class="info-content">
+                                <h3>Orientation Date</h3>
+                                <p>Tue 10/11 & Wed 10/12: 8am-3pm</p>
+                                <a href="#">Read More</a>
+                            </div>
+                        </li>
+                        <li class="info-item">
+                            <img class="desktop" src="/assets/info-campus.jpg" alt=""/>
+                            <img class="mobile" src="/assets/info-campus-mobile.jpg" alt=""/>
+                            <div id="info-2" class="info-content">
+                                <h3>Our Campus</h3>
+                                <p>Find out more about our campus</p>
+                                <a href="#">Read More</a>
+                            </div>
+                        </li>
+                        <li class="info-item">
+                            <img class="desktop" src="/assets/info-guest.jpg" alt=""/>
+                            <img class="mobile" src="/assets/info-guest-mobile.jpg" alt=""/>
+                            <div id="info-3" class="info-content">
+                                <h3>Guest Lecture</h3>
+                                <p>Join a seminar with Gonzalo Martinelli about how artificial intelligence will change the world</p>
+                                <a href="#">Read More</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <section class="learning">
+            <div class="learning-container">
+                <h2><a href="#">Start Learning</a></h2>
+                <div class="learning-grid">
+                    <div class="learning-card hidden-fade">
+                        <img src="/assets/course-engineering.jpg" alt=""/>
+                        <div class="card-content">
+                            <h3><a href="#">Software Engineering</a></h3>
+                            <span>COURSES</span>
+                            <p>Web Development, Mobile Development, iOt, APIs</p>
+                        </div>
+                    </div>
+                    <div class="learning-card hidden-fade">
+                        <img src="/assets/course-art.jpg" alt=""/>
+                        <div class="card-content">
+                            <h3><a href="#">Computer Art</a></h3>
+                            <span>COURSES</span>
+                            <p>Imaging & Design, Web Design, Motion Graphics & Visual Effects, Computer Animation</p>
+                        </div>
+                    </div>
+                    <div class="learning-card hidden-fade">
+                        <img src="/assets/course-design.jpg" alt=""/>
+                        <div class="card-content">
+                            <h3><a href="#">Design</a></h3>
+                            <span>COURSES</span>
+                            <p>User Experience Design, User Research, Visual Design, User Interface Design</p>
+                        </div>
+                    </div>
+                    <div class="learning-card hidden-fade">
+                        <img src="/assets/course-data.jpg" alt=""/>
+                        <div class="card-content">
+                            <h3><a href="#">Data</a></h3>
+                            <span>COURSES</span>
+                            <p>Data Science, Big Data, SQL, Data Visualization</p>
+                        </div>
+                    </div>
+                    <div class="learning-card hidden-fade">
+                        <img src="/assets/course-business.jpg" alt=""/>
+                        <div class="card-content">
+                            <h3><a href="#">Business</a></h3>
+                            <span>COURSES</span>
+                            <p>Product Development, Business Development, Startup</p>
+                        </div>
+                    </div>
+                    <div class="learning-card hidden-fade">
+                        <img src="/assets/course-marketing.jpg" alt=""/>
+                        <div class="card-content">
+                            <h3><a href="#">Marketing</a></h3>
+                            <span>COURSES</span>
+                            <p>Analytics, Content Marketing, Mobile Marketing</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="news">
+            <div class="news-container">
+                <h2><a href="#">Featured News</a></h2>
+                <div class="news-list">
+                    <div class="featured">
+                        <img src="/assets/img-news.jpg" alt=""/>
+                        <div class="article">
+                            <h3 class="hidden-fade">Is Web 3.0 Here?</h3>
+                            <p>Despite falling out of mainstream relevency, the push for web 3.0 has continued behind the scenes with blockchain implementation leading the charge. Many see blockchain technology as the next big frontier. Mike Cuban, for example, has... </p>
+                            <a href="#">Read More</a>
+                        </div>
+                    </div>
+                    <div class="additional">
+                        <div class="article">
+                            <h3>Sodalis: The Next Generation of Wearable Health Tracking</h3>
+                            <p class="desktop">Sodalis has shocked the market with its ground-breaking features and capabilities. FitBit and Apple have worthy competition...</p>
+                            <a href="#">Read More</a>
+                        </div>
+                        <div class="article">
+                            <h3>Small Startup Making Waves With its Implementation of VR</h3>
+                            <p class="desktop">A small startup based in Houston has caught the eyes of many with their use of VR. Using the Unreal Engine as a foundation, these developers have managed to...</p>
+                            <a href="#">Read More</a>
+                        </div>
+                        <div class="article">
+                            <h3>“The AI Wars have Begun”</h3>
+                            <p class="desktop">Heavyweights Microsoft and Google have both released their new AIs into the world and while Microsoft seems to have the lead with Bing, the race has only just started...</p>
+                            <a href="#">Read More</a>
+                        </div>
+                        <div class="article">
+                            <h3>Will Rust and Flutter Take Over Software Engineering?</h3>
+                            <p class="desktop">Rust has proven to be a breath of fresh air for many working with embedded systems while Flutter shows promise in revolutionizing app development. How long before...</p>
+                            <a href="#">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="thesis">
+            <div class="thesis-container">
+                <h2><a href="#">Thesis Exhibit</a></h2>
+                <div class="thesis-main">
+                    <img src="/assets/thesis-vr.jpg" alt=""/>
+                    <div class="thesis-content">
+                        <h3>Virtual Reality can Revolutionize Online Learning</h3>
+                        <p>The pandemic exposed the many faults in the educations system's online learning format. For years now, online classes have been a thorn in the side for countless educators and students. Virtual Reality, however, can help bridge the gap in quality betweeen face-to-face and online learning while minimizing costs to institutions.</p>
+                        <a href="#">Read More</a>
+                    </div>
+                </div>
+                <div class="thesis-additionals">
+                    <div class="thesis-card">
+                        <img src="/assets/thesis-figma.jpg" alt=""/>
+                        <div class="thesis-content">
+                            <h3>Figma: Design & Prototype</h3>
+                            <p>Designer showcase of new prototype product</p>
+                            <a href="#">Read More</a>
+                        </div>
+                    </div>
+                    <div class="thesis-card">
+                        <img src="/assets/thesis-now.jpg" alt=""/>
+                        <div class="thesis-content">
+                            <h3>Now and Then</h3>
+                            <p>Research study on the evolution of website development</p>
+                            <a href="#">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="page-links">
+                <div class="helpful-links">
+                    <p>Helpful Links</p>
+                    <ul>
+                        <li><a href="#">Academic Calender</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Events</a></li>
+                        <li><a href="#">News</a></li>
+                    </ul>
+                </div>
+                <div class="visitor-links">
+                    <p>Visiting Colmar</p>
+                    <ul>
+                        <li><a href="">Campus Tours</a></li>
+                        <li><a href="">Maps & Directions</a></li>
+                        <li><a href="">Exploring the City</a></li>
+                        <li><a href="">Botanical Gardens</a></li>
+                    </ul>
+                </div>
+                <div class="social-links">
+                    <p>Follow Us</p>
+                    <ul>
+                        <li><a href="#"><img class="twitter" src="/assets/logo-twitter.png" alt="twitter logo"/></a></li>
+                        <li><a href="#"><img class="facebook" src="/assets/logo-fb.png" alt="facebook logo"/></a></li>
+                        <li><a href="#"><img class="instagram" src="/assets/logo-insta.png" alt="instagram logo"/></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="ownership">
+                <span>@2016 - 2023 Colmar Academy. All rights reserved.</span>
+                <ul class="legal">
+                    <li><a href="#">Terms</a></li>
+                    <li><a href="#">Privacy</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
