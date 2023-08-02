@@ -347,7 +347,7 @@ nav {
 
 .hero {
    height: 55vw;
-   background: url("/assets/img-hero.jpg");
+   background: url("assets/img-hero.jpg");
    background-size: cover;
    background-position: center;
 }
